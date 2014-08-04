@@ -2,13 +2,16 @@ package com.luke.notes.dao;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.luke.notes.model.Note;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 /**
@@ -36,7 +39,7 @@ public class NoteDAO extends SQLiteOpenHelper {
 
         values.put("title", note.getTitle());
         values.put("content", note.getContent());
-        values.put("lastModification", getTimestampString(note.getLastModification()));
+        values.put("lastModification", dateToTimestamp(note.getLastModification()));
     }
 
     @Override
@@ -47,8 +50,38 @@ public class NoteDAO extends SQLiteOpenHelper {
         this.onCreate(db);
     }
 
-    private String getTimestampString(Date date) {
+    private String dateToTimestamp(Date date) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
         return dateFormat.format(date);
+    }
+
+    //TO DO
+  /*private Date timestampToDate(String timestamp){
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+        return dateFormat.
+    }
+        */
+
+
+    public List<Note> getLista() {
+        String[] columns = { "id", "title", "content", "lastModification" };
+
+        Cursor cursor = getWritableDatabase().query("Notes", columns, null, null, null, null, null);
+
+        ArrayList<Note> notes = new ArrayList<Note>();
+
+        while (cursor.moveToNext()) {
+
+            Note note = new Note();
+
+            note.setId(cursor.getInt(0));
+            note.setTitle(cursor.getString(1));
+            note.setContent(cursor.getString(2));
+            //note.setLastModification(cursor.getString(3));
+
+            notes.add(note);
+        }
+
+        return notes;
     }
 }

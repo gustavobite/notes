@@ -6,9 +6,18 @@ import java.util.Date;
  * Created by LSilva on 04/08/2014.
  */
 public class Note {
+    private Integer id;
     private String title;
     private String content;
     private Date lastModification;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public Date getLastModification() {
         return lastModification;
