@@ -1,12 +1,12 @@
 package com.luke.notes;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.luke.androidthirdparty.R;
-
+import com.luke.notes.R;
 
 public class HomeActivity extends Activity {
 
@@ -15,7 +15,6 @@ public class HomeActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -29,10 +28,15 @@ public class HomeActivity extends Activity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+        switch(item.getItemId()){
+            case R.id.action_add:
+                Intent goToNewNote = new Intent(this, NewNoteActivity.class);
+                startActivity(goToNewNote);
+                return true;
+            case R.id.action_search:
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
     }
 }

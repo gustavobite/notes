@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".HomeActivity"
+    >
+    <item android:id="@+id/action_add"
+        android:title=""
+        android:icon="@drawable/ic_action_new"
+        android:orderInCategory="100"
+        android:showAsAction="always" />
+</menu>
+<!-- From: file:/C:/Users/lsilva/AndroidStudioProjects/Notes/app/src/main/res/menu/home.xml -->

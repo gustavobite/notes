@@ -1,8 +1,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".HomeActivity" >
-    <item android:id="@+id/action_settings"
-        android:title="@string/action_settings"
+    tools:context=".HomeActivity"
+    >
+    <item android:id="@+id/action_search"
+        android:title=""
+        android:icon="@drawable/ic_action_search"
         android:orderInCategory="100"
-        android:showAsAction="never" />
+        android:showAsAction="always"
+        />
+
+    <item android:id="@+id/action_add"
+        android:title=""
+        android:icon="@drawable/ic_action_new"
+        android:orderInCategory="100"
+        android:showAsAction="always" />
 </menu>
