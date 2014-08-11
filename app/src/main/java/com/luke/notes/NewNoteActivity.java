@@ -2,6 +2,7 @@ package com.luke.notes;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.opengl.EGLExt;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -31,9 +32,17 @@ public class NewNoteActivity extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
+        if (id == android.R.id.home) {
+            finish();
+            overridePendingTransition(R.anim.activity_back_in, R.anim.activity_back_out);
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.activity_back_in, R.anim.activity_back_out);
     }
 }
