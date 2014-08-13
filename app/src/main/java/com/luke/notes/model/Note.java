@@ -29,7 +29,12 @@ public class Note {
     }
 
     public void setLastModification(String lastModification) {
-        this.lastModification = lastModification;
+        if(!lastModification.isEmpty()){
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy MMM dd HH:mm:ss");
+            this.lastModification = formatter.format(Calendar.getInstance());
+        } else {
+            this.lastModification = lastModification;
+        }
     }
 
     public String getTitle() {
@@ -48,36 +53,4 @@ public class Note {
         this.content = content;
     }
 
-    public String getFormattedLastModification() {
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy MMM dd HH:mm:ss");
-        Date date = null;
-        try {
-            date = formatter.parse(this.lastModification);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        Calendar lastMod = Calendar.getInstance();
-        lastMod.setTime(date);
-
-        Calendar now = Calendar.getInstance();
-
-        String returnDate;
-
-        if (lastMod.get(Calendar.DATE) == now.get(Calendar.DATE) &&
-                lastMod.get(Calendar.MONTH) == now.get(Calendar.MONTH) &&
-                lastMod.get(Calendar.YEAR) == now.get(Calendar.YEAR)){
-            formatter = new SimpleDateFormat("HH:mm:ss");
-            returnDate = formatter.format(lastMod);
-        } else if(lastMod.get(Calendar.WEEK_OF_YEAR) == now.get(Calendar.WEEK_OF_YEAR) &&
-                  lastMod.get(Calendar.YEAR) == now.get(Calendar.YEAR)){
-            formatter = new SimpleDateFormat("EEEEEEEEEE");
-            returnDate = formatter.format(lastMod);
-        } else {
-            formatter = new SimpleDateFormat("yyyy/MM/dd");
-            returnDate = formatter.format(lastMod);
-        }
-
-        return returnDate;
-    }
 }

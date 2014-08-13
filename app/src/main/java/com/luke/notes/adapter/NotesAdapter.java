@@ -9,9 +9,8 @@ import android.widget.TextView;
 
 import com.luke.notes.R;
 import com.luke.notes.model.Note;
+import com.luke.notes.util.DateUtil;
 
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -45,13 +44,13 @@ public class NotesAdapter extends BaseAdapter {
         Note note = notes.get(position);
 
         LayoutInflater inflater = activity.getLayoutInflater();
-        View line = inflater.inflate(R.layout.note_line, null);
+        View line = inflater.inflate(R.layout.note_item, null);
 
         TextView title = (TextView) line.findViewById(R.id.title);
         title.setText(note.getTitle());
 
         TextView lastModification = (TextView) line.findViewById(R.id.last_modification);
-        title.setText(note.getFormattedLastModification());
+        title.setText(DateUtil.getFormattedLastModification(note.getLastModification()));
 
         return line;
     }

@@ -4,13 +4,73 @@
     <dataSet config="main" >
         <source path="/Users/lalbuquerque/Workspace/notes/app/src/main/res" >
             <file
+                name="activity_back_in"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/anim/activity_back_in.xml"
+                qualifiers=""
+                type="anim" />
+            <file
+                name="activity_back_out"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/anim/activity_back_out.xml"
+                qualifiers=""
+                type="anim" />
+            <file
                 name="activity_in"
                 path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/anim/activity_in.xml"
                 qualifiers=""
                 type="anim" />
             <file
+                name="activity_out"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/anim/activity_out.xml"
+                qualifiers=""
+                type="anim" />
+            <file
+                name="apptheme_edit_text_holo_light"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable/apptheme_edit_text_holo_light.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="apptheme_textfield_activated_holo_light"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-hdpi/apptheme_textfield_activated_holo_light.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="apptheme_textfield_default_holo_light"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-hdpi/apptheme_textfield_default_holo_light.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="apptheme_textfield_disabled_focused_holo_light"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-hdpi/apptheme_textfield_disabled_focused_holo_light.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="apptheme_textfield_disabled_holo_light"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-hdpi/apptheme_textfield_disabled_holo_light.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="apptheme_textfield_focused_holo_light"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-hdpi/apptheme_textfield_focused_holo_light.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_discard"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-hdpi/ic_action_discard.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
                 name="ic_action_new"
                 path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-hdpi/ic_action_new.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_overflow"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-hdpi/ic_action_overflow.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_save"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-hdpi/ic_action_save.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
@@ -24,8 +84,48 @@
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
+                name="apptheme_textfield_activated_holo_light"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-mdpi/apptheme_textfield_activated_holo_light.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="apptheme_textfield_default_holo_light"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-mdpi/apptheme_textfield_default_holo_light.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="apptheme_textfield_disabled_focused_holo_light"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-mdpi/apptheme_textfield_disabled_focused_holo_light.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="apptheme_textfield_disabled_holo_light"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-mdpi/apptheme_textfield_disabled_holo_light.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="apptheme_textfield_focused_holo_light"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-mdpi/apptheme_textfield_focused_holo_light.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_discard"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-mdpi/ic_action_discard.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
                 name="ic_action_new"
                 path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-mdpi/ic_action_new.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_overflow"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-mdpi/ic_action_overflow.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_save"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-mdpi/ic_action_save.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
@@ -39,8 +139,48 @@
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
+                name="apptheme_textfield_activated_holo_light"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-xhdpi/apptheme_textfield_activated_holo_light.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="apptheme_textfield_default_holo_light"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-xhdpi/apptheme_textfield_default_holo_light.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="apptheme_textfield_disabled_focused_holo_light"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-xhdpi/apptheme_textfield_disabled_focused_holo_light.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="apptheme_textfield_disabled_holo_light"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-xhdpi/apptheme_textfield_disabled_holo_light.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="apptheme_textfield_focused_holo_light"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-xhdpi/apptheme_textfield_focused_holo_light.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_discard"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-xhdpi/ic_action_discard.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
                 name="ic_action_new"
                 path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-xhdpi/ic_action_new.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_overflow"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-xhdpi/ic_action_overflow.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_save"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-xhdpi/ic_action_save.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
@@ -54,8 +194,48 @@
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
+                name="apptheme_textfield_activated_holo_light"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-xxhdpi/apptheme_textfield_activated_holo_light.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="apptheme_textfield_default_holo_light"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-xxhdpi/apptheme_textfield_default_holo_light.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="apptheme_textfield_disabled_focused_holo_light"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-xxhdpi/apptheme_textfield_disabled_focused_holo_light.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="apptheme_textfield_disabled_holo_light"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-xxhdpi/apptheme_textfield_disabled_holo_light.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="apptheme_textfield_focused_holo_light"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-xxhdpi/apptheme_textfield_focused_holo_light.9.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_discard"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-xxhdpi/ic_action_discard.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
                 name="ic_action_new"
                 path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-xxhdpi/ic_action_new.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_overflow"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-xxhdpi/ic_action_overflow.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_save"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/drawable-xxhdpi/ic_action_save.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
@@ -79,8 +259,8 @@
                 qualifiers=""
                 type="layout" />
             <file
-                name="note_line"
-                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/layout/note_line.xml"
+                name="note_item"
+                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/layout/note_item.xml"
                 qualifiers=""
                 type="layout" />
             <file
@@ -104,13 +284,17 @@
             <file
                 path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/values/strings.xml"
                 qualifiers="" >
-                <string name="action_settings" >Settings
+                <string name="menu_items" >Menu Items
                 </string>
                 <string name="app_name" >Notes!
+                </string>
+                <string name="action_save" >Save
                 </string>
                 <string name="title_activity_new_note" >NewNote
                 </string>
                 <string name="hello_world" >Hello world!
+                </string>
+                <string name="action_delete" >Delete
                 </string>
             </file>
             <file
@@ -122,6 +306,9 @@
                     parent="android:Theme.Holo.Light" >
                     <item name="android:actionBarStyle">
 @style/MyActionBar
+                    </item>
+                    <item name="android:editTextBackground">
+@drawable/apptheme_edit_text_holo_light
                     </item>
                 </style>
 
@@ -139,21 +326,6 @@
                 <dimen name="activity_horizontal_margin" >64dp
                 </dimen>
             </file>
-            <file
-                name="activity_out"
-                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/anim/activity_out.xml"
-                qualifiers=""
-                type="anim" />
-            <file
-                name="activity_back_out"
-                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/anim/activity_back_out.xml"
-                qualifiers=""
-                type="anim" />
-            <file
-                name="activity_back_in"
-                path="/Users/lalbuquerque/Workspace/notes/app/src/main/res/anim/activity_back_in.xml"
-                qualifiers=""
-                type="anim" />
         </source>
         <source path="/Users/lalbuquerque/Workspace/notes/app/build/generated/res/rs/debug" />
         <source path="/Users/lalbuquerque/Workspace/notes/app/build/generated/res/generated/debug" />
