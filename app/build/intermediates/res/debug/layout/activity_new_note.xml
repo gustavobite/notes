@@ -14,9 +14,9 @@
         android:layout_height="fill_parent"
         android:inputType="textMultiLine"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/note_content"
         android:gravity="left|top"
         android:scrollbars="vertical"
         android:layout_alignParentTop="true" />
 </RelativeLayout>
-<!-- From: file:/Users/lalbuquerque/Workspace/notes/app/src/main/res/layout/activity_new_note.xml -->
+<!-- From: file:/C:/Users/lsilva/AndroidStudioProjects/notes/app/src/main/res/layout/activity_new_note.xml -->

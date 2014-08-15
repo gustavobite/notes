@@ -40,9 +40,9 @@ public final class R {
         public static final int action_save=0x7f090009;
         public static final int action_search=0x7f090005;
         public static final int background=0x7f090002;
-        public static final int editText=0x7f090001;
         public static final int last_modification=0x7f090004;
         public static final int menu_items=0x7f090007;
+        public static final int note_content=0x7f090001;
         public static final int notes_list=0x7f090000;
         public static final int title=0x7f090003;
     }

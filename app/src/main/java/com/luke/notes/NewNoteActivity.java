@@ -2,8 +2,11 @@ package com.luke.notes;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.opengl.EGLExt;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,6 +17,8 @@ import com.luke.notes.model.Note;
 
 public class NewNoteActivity extends Activity {
 
+    EditText content;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,8 +27,7 @@ public class NewNoteActivity extends Activity {
         ActionBar actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        EditText content = (EditText) findViewById(R.id.note_content);
-        content.
+        content = (EditText) findViewById(R.id.note_content);
     }
 
     @Override
@@ -45,6 +49,20 @@ public class NewNoteActivity extends Activity {
                 overridePendingTransition(R.anim.activity_back_in, R.anim.activity_back_out);
                 return true;
             case R.id.action_save:
+                final EditText noteTitle = new EditText(this);
+                new AlertDialog.Builder(this).setTitle("Salvar")
+                                             .setMessage("Dê um nome para a sua nota:")
+                                             .setView(noteTitle)
+                                             .setPositiveButton("Salvar", new DialogInterface.OnClickListener() {
+                                                 @Override
+                                                 public void onClick(DialogInterface dialogInterface, int i) {
+                                                    if (noteTitle.getText().toString() == ""){
+                                                    
+                                                    }
+                                                 }
+                                             })
+                                             .setNeutralButton("Cancelar", null)
+                                             .show();
                 return true;
             case R.id.action_delete:
                 return true;
