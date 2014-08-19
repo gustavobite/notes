@@ -1,5 +1,6 @@
 package com.luke.notes.model;
 
+import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -10,7 +11,7 @@ import java.util.Locale;
 /**
  * Created by LSilva on 04/08/2014.
  */
-public class Note {
+public class Note implements Serializable{
     private Integer id;
     private String title;
     private String content;
@@ -29,9 +30,9 @@ public class Note {
     }
 
     public void setLastModification(String lastModification) {
-        if(!lastModification.isEmpty()){
-            SimpleDateFormat formatter = new SimpleDateFormat("yyyy MMM dd HH:mm:ss");
-            this.lastModification = formatter.format(Calendar.getInstance());
+        if(lastModification == null){
+            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yy");
+            this.lastModification = formatter.format(new Date());
         } else {
             this.lastModification = lastModification;
         }

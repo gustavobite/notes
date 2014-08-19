@@ -2,29 +2,72 @@ package com.luke.notes;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.opengl.EGLExt;
 import android.os.Bundle;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
-import com.luke.notes.R;
+import com.luke.notes.adapter.NotesAdapter;
+import com.luke.notes.dao.NoteDAO;
+import com.luke.notes.model.Note;
+
+import java.util.List;
+
+import de.keyboardsurfer.android.widget.crouton.Crouton;
+import de.keyboardsurfer.android.widget.crouton.Style;
 
 public class HomeActivity extends Activity {
+    ListView notesField;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        ListView listView = (ListView) findViewById(R.id.notes_list);
-        String[] listValues = {"Cocozinho", "12312312", "oi"};
+        notesField = (ListView) findViewById(R.id.notes_list);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listValues);
-        listView.setAdapter(adapter);
+        registerForContextMenu(notesField);
 
+        notesField.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapter, View view, int position, long l) {
+                Note selectedNote = (Note) adapter.getItemAtPosition(position);
+                Intent goToNote = new Intent(HomeActivity.this, NoteActivity.class);
+                goToNote.putExtra("note", selectedNote);
+                startActivity(goToNote);
+                overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
+            }
+        });
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        NoteDAO dao = new NoteDAO(this);
+        List<Note> notesList = dao.getList();
+        dao.close();
+        final TextView emptyListText = (TextView) findViewById(R.id.empty_list_text);
+        if (notesList.isEmpty()){
+            emptyListText.setVisibility(View.VISIBLE);
+            Crouton.showText(this, "Create your first note by touching on +", Style.INFO);
+        } else {
+            NotesAdapter adapter = new NotesAdapter(notesList, this);
+            notesField.setAdapter(adapter);
+            emptyListText.setVisibility(View.INVISIBLE);
+        }
+    }
+
+//    @Override
+//    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+//        MenuItem delete = menu.add("Delete");
+//        menu.add("Edit");
+//
+//        super.onCreateContextMenu(menu, v, menuInfo);
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -40,7 +83,7 @@ public class HomeActivity extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         switch(item.getItemId()){
             case R.id.action_add:
-                Intent goToNewNote = new Intent(this, NewNoteActivity.class);
+                Intent goToNewNote = new Intent(this, NoteActivity.class);
                 startActivity(goToNewNote);
                 overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
                 return true;
@@ -49,5 +92,11 @@ public class HomeActivity extends Activity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Crouton.cancelAllCroutons();
     }
 }

@@ -21,10 +21,10 @@ import java.util.Locale;
 public class NoteDAO extends SQLiteOpenHelper {
 
     private static final String DATABASE = "Notes";
-    private static final int VERSION = 1;
+    private static final int VERSION = 2;
 
-    public NoteDAO(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, DATABASE, factory, VERSION);
+    public NoteDAO(Context context) {
+        super(context, DATABASE, null, VERSION);
     }
 
     @Override
@@ -35,12 +35,15 @@ public class NoteDAO extends SQLiteOpenHelper {
         db.execSQL(ddl);
     }
 
-    public void save(Note note){
+    public long save(Note note){
         ContentValues values = new ContentValues();
 
         values.put("title", note.getTitle());
         values.put("content", note.getContent());
         values.put("lastModification", note.getLastModification());
+
+        return getWritableDatabase().insert("Notes", null, values);
+
     }
 
     @Override
@@ -77,5 +80,16 @@ public class NoteDAO extends SQLiteOpenHelper {
     public void delete(Note note){
         String [] args = {note.getId().toString()};
         getWritableDatabase().delete("Notes", "id=?", args);
+    }
+
+    public void update(Note note){
+        ContentValues values = new ContentValues();
+
+        values.put("title", note.getTitle());
+        values.put("content", note.getContent());
+        values.put("lastModification", note.getLastModification());
+
+        String [] args = {note.getId().toString()};
+        getWritableDatabase().update("Notes", values, "id=?", args);
     }
 }

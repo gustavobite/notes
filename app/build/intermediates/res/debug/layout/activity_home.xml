@@ -13,7 +13,16 @@
         android:id="@+id/notes_list"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
-
     </ListView>
+
+    <TextView
+        android:id="@+id/empty_list_text"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="invisible"
+        android:text="@string/empty_list_text"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/darker_gray"
+        android:gravity="center_vertical|center_horizontal"/>
 </RelativeLayout>
 <!-- From: file:/Users/lalbuquerque/Workspace/notes/app/src/main/res/layout/activity_home.xml -->

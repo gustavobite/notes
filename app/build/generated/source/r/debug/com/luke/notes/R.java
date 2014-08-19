@@ -32,19 +32,19 @@ public final class R {
         public static final int ic_action_overflow=0x7f020008;
         public static final int ic_action_save=0x7f020009;
         public static final int ic_action_search=0x7f02000a;
-        public static final int ic_launcher=0x7f02000b;
+        public static final int ic_action_warning=0x7f02000b;
+        public static final int ic_launcher=0x7f02000c;
     }
     public static final class id {
-        public static final int action_add=0x7f090006;
+        public static final int action_add=0x7f090007;
         public static final int action_delete=0x7f090008;
-        public static final int action_save=0x7f090009;
-        public static final int action_search=0x7f090005;
-        public static final int background=0x7f090002;
-        public static final int editText=0x7f090001;
-        public static final int last_modification=0x7f090004;
-        public static final int menu_items=0x7f090007;
+        public static final int action_search=0x7f090006;
+        public static final int background=0x7f090003;
+        public static final int empty_list_text=0x7f090001;
+        public static final int last_modification=0x7f090005;
+        public static final int note_content=0x7f090002;
         public static final int notes_list=0x7f090000;
-        public static final int title=0x7f090003;
+        public static final int title=0x7f090004;
     }
     public static final class layout {
         public static final int activity_home=0x7f030000;
@@ -59,9 +59,10 @@ public final class R {
         public static final int action_delete=0x7f060000;
         public static final int action_save=0x7f060001;
         public static final int app_name=0x7f060002;
-        public static final int hello_world=0x7f060003;
-        public static final int menu_items=0x7f060004;
-        public static final int title_activity_new_note=0x7f060005;
+        public static final int empty_list_text=0x7f060003;
+        public static final int hello_world=0x7f060004;
+        public static final int menu_items=0x7f060005;
+        public static final int title_activity_new_note=0x7f060006;
     }
     public static final class style {
         public static final int AppTheme=0x7f070000;
