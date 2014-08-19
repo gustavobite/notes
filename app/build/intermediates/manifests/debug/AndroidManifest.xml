@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.luke.notes.debug"
+    package="br.com.lucasalbuquerque.notes.debug"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -13,7 +13,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="Notes!"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.luke.notes.HomeActivity" >
+        <activity android:name="br.com.lucasalbuquerque.notes.HomeActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,9 +21,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.luke.notes.NoteActivity"
+            android:name="br.com.lucasalbuquerque.notes.NoteActivity"
             android:label=" "
-            android:parentActivityName="com.luke.notes.HomeActivity" >
+            android:parentActivityName="br.com.lucasalbuquerque.notes.HomeActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.luke.notes.HomeActivity" />
