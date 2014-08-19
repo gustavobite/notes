@@ -12,6 +12,7 @@
     <string name="action_delete">Delete</string>
     <string name="action_save">Save</string>
     <string name="app_name">Notes!</string>
+    <string name="empty_list_text">No notes yet</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_items">Menu Items</string>
     <string name="title_activity_new_note">NewNote</string>

@@ -21,8 +21,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.luke.notes.NewNoteActivity"
-            android:label="@string/title_activity_new_note"
+            android:name="com.luke.notes.NoteActivity"
+            android:label=" "
             android:parentActivityName="com.luke.notes.HomeActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
