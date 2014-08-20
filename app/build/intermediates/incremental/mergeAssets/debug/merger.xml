@@ -2,10 +2,10 @@
 <merger version="2" >
 
     <dataSet config="main" >
-        <source path="C:\Users\lsilva\AndroidStudioProjects\notes\app\src\main\assets" />
+        <source path="/Users/lalbuquerque/Workspace/notes/app/src/main/assets" />
     </dataSet>
     <dataSet config="debug" >
-        <source path="C:\Users\lsilva\AndroidStudioProjects\notes\app\src\debug\assets" />
+        <source path="/Users/lalbuquerque/Workspace/notes/app/src/debug/assets" />
     </dataSet>
 
 </merger>

@@ -17,7 +17,7 @@ import java.util.List;
 public class NoteDAO extends SQLiteOpenHelper {
 
     private static final String DATABASE = "Notes";
-    private static final int VERSION = 2;
+    private static final int VERSION = 3;
 
     public NoteDAO(Context context) {
         super(context, DATABASE, null, VERSION);
@@ -26,7 +26,7 @@ public class NoteDAO extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String ddl = "CREATE TABLE Notes (id integer PRIMARY KEY AUTOINCREMENT, "
-                + " title TEXT UNIQUE NOT NULL, content TEXT, "
+                + " title TEXT, content TEXT, "
                 + " lastModification TEXT);";
         db.execSQL(ddl);
     }
@@ -54,7 +54,7 @@ public class NoteDAO extends SQLiteOpenHelper {
     public List<Note> getList() {
         String[] columns = { "id", "title", "content", "lastModification" };
 
-        Cursor cursor = getWritableDatabase().query("Notes", columns, null, null, null, null, null);
+        Cursor cursor = getWritableDatabase().query("Notes", columns, null, null, null, null, columns[0] + " DESC");
 
         ArrayList<Note> notes = new ArrayList<Note>();
 
