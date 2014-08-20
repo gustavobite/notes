@@ -1,15 +1,22 @@
 package br.com.lucasalbuquerque.notes;
 
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -25,6 +32,7 @@ import de.keyboardsurfer.android.widget.crouton.Style;
 public class HomeActivity extends Activity {
     ListView notesField;
     TextView emptyListText;
+    ImageView iv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +42,9 @@ public class HomeActivity extends Activity {
         notesField = (ListView) findViewById(R.id.notes_list);
         emptyListText = (TextView) findViewById(R.id.empty_list_text);
 
-        if(isNoteListEmpty()) Crouton.showText(this, "Create your first note by touching on +", Style.INFO);
+        if(isNoteListEmpty()) {
+            Crouton.showText(this, "Create your first note by touching on +", Style.INFO);
+        }
 
         registerForContextMenu(notesField);
 
@@ -136,6 +146,18 @@ public class HomeActivity extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.home, menu);
+
+        Animation shakeAnimation = AnimationUtils.loadAnimation(this, R.anim.shake);
+        MenuItem add_icon = menu.findItem(R.id.action_add);
+
+        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        iv = (ImageView) inflater.inflate(R.layout.add_note_layout, null);
+
+        add_icon.setActionView(iv);
+
+        iv.startAnimation(shakeAnimation);
+
         return true;
     }
 
@@ -158,5 +180,12 @@ public class HomeActivity extends Activity {
     protected void onDestroy() {
         super.onDestroy();
         Crouton.cancelAllCroutons();
+    }
+
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        MenuItem add_icon = (MenuItem) findViewById(R.id.action_add);
+        add_icon.getActionView().clearAnimation();
     }
 }

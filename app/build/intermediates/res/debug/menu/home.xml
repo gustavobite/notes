@@ -1,6 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".HomeActivity"
+
     >
     <item android:id="@+id/action_search"
         android:title=""
@@ -16,4 +17,4 @@
         android:orderInCategory="100"
         android:showAsAction="always" />
 </menu>
-<!-- From: file:/Users/lalbuquerque/Workspace/notes/app/src/main/res/menu/home.xml -->
+<!-- From: file:/C:/Users/lsilva/AndroidStudioProjects/notes/app/src/main/res/menu/home.xml -->

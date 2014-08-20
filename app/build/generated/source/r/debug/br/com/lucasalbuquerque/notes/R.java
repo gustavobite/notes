@@ -13,6 +13,8 @@ public final class R {
         public static final int activity_back_out=0x7f040001;
         public static final int activity_in=0x7f040002;
         public static final int activity_out=0x7f040003;
+        public static final int cycle_7=0x7f040004;
+        public static final int shake=0x7f040005;
     }
     public static final class attr {
     }
@@ -36,20 +38,22 @@ public final class R {
         public static final int ic_launcher=0x7f02000c;
     }
     public static final class id {
-        public static final int action_add=0x7f090007;
-        public static final int action_delete=0x7f090008;
-        public static final int action_search=0x7f090006;
-        public static final int background=0x7f090003;
+        public static final int action_add=0x7f090008;
+        public static final int action_delete=0x7f090009;
+        public static final int action_search=0x7f090007;
+        public static final int add_note_layout=0x7f090003;
+        public static final int background=0x7f090004;
         public static final int empty_list_text=0x7f090001;
-        public static final int last_modification=0x7f090005;
+        public static final int last_modification=0x7f090006;
         public static final int note_content=0x7f090002;
         public static final int notes_list=0x7f090000;
-        public static final int title=0x7f090004;
+        public static final int title=0x7f090005;
     }
     public static final class layout {
         public static final int activity_home=0x7f030000;
         public static final int activity_note=0x7f030001;
-        public static final int note_item=0x7f030002;
+        public static final int add_note_layout=0x7f030002;
+        public static final int note_item=0x7f030003;
     }
     public static final class menu {
         public static final int home=0x7f080000;
