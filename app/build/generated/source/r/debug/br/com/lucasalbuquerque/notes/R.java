@@ -13,9 +13,7 @@ public final class R {
         public static final int activity_back_out=0x7f040001;
         public static final int activity_in=0x7f040002;
         public static final int activity_out=0x7f040003;
-        public static final int cycle_7=0x7f040004;
-        public static final int shake=0x7f040005;
-        public static final int wobble=0x7f040006;
+        public static final int wobble=0x7f040004;
     }
     public static final class attr {
     }

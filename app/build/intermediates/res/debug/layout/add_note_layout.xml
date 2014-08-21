@@ -3,4 +3,4 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:src="@drawable/ic_action_new"
-    style="@android:style/Widget.Holo.ActionButton"/><!-- From: file:/Users/lalbuquerque/Workspace/notes/app/src/main/res/layout/add_note_layout.xml -->
+    style="@android:style/Widget.Holo.ActionButton"/><!-- From: file:/C:/Users/lsilva/AndroidStudioProjects/notes/app/src/main/res/layout/add_note_layout.xml -->

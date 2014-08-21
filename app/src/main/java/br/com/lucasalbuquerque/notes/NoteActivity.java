@@ -75,6 +75,7 @@ public class NoteActivity extends Activity {
         int id = item.getItemId();
         switch(id) {
             case android.R.id.home:
+                deleteNoteIfNoContent();
                 finish();
                 overridePendingTransition(R.anim.activity_back_in, R.anim.activity_back_out);
                 return true;
@@ -104,6 +105,7 @@ public class NoteActivity extends Activity {
     @Override
     public void onBackPressed(){
         super.onBackPressed();
+        deleteNoteIfNoContent();
         overridePendingTransition(R.anim.activity_back_in, R.anim.activity_back_out);
     }
 
@@ -131,6 +133,18 @@ public class NoteActivity extends Activity {
         NoteDAO dao = new NoteDAO(this);
         dao.update(note);
         dao.close();
+    }
+
+    public boolean isNoteContentEmpty(){
+        return noteContent.getText().toString().isEmpty() || noteContent.getText().toString() == null;
+    }
+
+    public void deleteNoteIfNoContent(){
+        if(!newNote && isNoteContentEmpty()){
+            NoteDAO dao = new NoteDAO(NoteActivity.this);
+            dao.delete(note);
+            dao.close();
+        }
     }
 
     @Override

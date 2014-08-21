@@ -163,8 +163,10 @@ public class HomeActivity extends Activity {
 
         add_icon.setActionView(iv);
 
-        iv.startAnimation(wobbleAnimation);
-        runEndAnimation();
+        if(isNoteListEmpty()){
+            iv.startAnimation(wobbleAnimation);
+            runEndAnimation();
+        }
 
         return true;
     }
@@ -196,7 +198,7 @@ public class HomeActivity extends Activity {
             @Override
             protected Object doInBackground(Object[] objects) {
                 try {
-                    Thread.sleep(2500);
+                    Thread.sleep(2000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } catch (Exception e) {
