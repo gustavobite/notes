@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="br.com.lucasalbuquerque.notes.NoteActivity" >
+    <item android:id="@+id/action_delete"
+            android:title="@string/action_delete"
+            android:icon="@drawable/ic_action_discard"
+            android:showAsAction="always" />
+
+
+
+</menu>
+<!-- From: file:/Users/lalbuquerque/Workspace/notes/app/src/main/res/menu/note.xml -->

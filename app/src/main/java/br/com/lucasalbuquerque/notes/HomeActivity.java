@@ -7,7 +7,9 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -33,6 +35,8 @@ public class HomeActivity extends Activity {
     ListView notesField;
     TextView emptyListText;
     ImageView iv;
+    MenuItem add_icon;
+    Animation wobbleAnimation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,9 @@ public class HomeActivity extends Activity {
 
         notesField = (ListView) findViewById(R.id.notes_list);
         emptyListText = (TextView) findViewById(R.id.empty_list_text);
+
+        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        iv = (ImageView) inflater.inflate(R.layout.add_note_layout, null);
 
         if(isNoteListEmpty()) {
             Crouton.showText(this, "Create your first note by touching on +", Style.INFO);
@@ -144,11 +151,11 @@ public class HomeActivity extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.home, menu);
 
-        Animation shakeAnimation = AnimationUtils.loadAnimation(this, R.anim.shake);
-        MenuItem add_icon = menu.findItem(R.id.action_add);
+        wobbleAnimation = AnimationUtils.loadAnimation(this,R.anim.wobble);
+
+        add_icon = menu.findItem(R.id.action_add);
 
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -156,7 +163,8 @@ public class HomeActivity extends Activity {
 
         add_icon.setActionView(iv);
 
-        iv.startAnimation(shakeAnimation);
+        iv.startAnimation(wobbleAnimation);
+        runEndAnimation();
 
         return true;
     }
@@ -182,10 +190,29 @@ public class HomeActivity extends Activity {
         Crouton.cancelAllCroutons();
     }
 
-    @Override
-    protected void onPostCreate(Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-        MenuItem add_icon = (MenuItem) findViewById(R.id.action_add);
-        add_icon.getActionView().clearAnimation();
+
+    public void runEndAnimation(){
+        AsyncTask runner = new AsyncTask() {
+            @Override
+            protected Object doInBackground(Object[] objects) {
+                try {
+                    Thread.sleep(2500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Object o) {
+                super.onPostExecute(o);
+                iv.clearAnimation();
+                wobbleAnimation.cancel();
+                add_icon.setActionView(null);
+            }
+        };
+        runner.execute();
     }
 }
