@@ -3,9 +3,9 @@ Notes!
 
 
 
-Notes! is a very very very simply notes app.
+Notes! is a very very very simple notes app.
 
-The idea is give you the benefit of simplicity.
+The idea is to give you the benefit of simplicity.
 Is opening the app and do things quickly.
 
 
