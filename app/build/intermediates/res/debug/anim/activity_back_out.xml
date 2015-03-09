@@ -4,4 +4,4 @@
         android:fromXDelta="0"
         android:toXDelta="100%"
         android:duration="400" />
-</set><!-- From: file:/C:/Users/lsilva/AndroidStudioProjects/notes/app/src/main/res/anim/activity_back_out.xml -->
+</set><!-- From: file:/Users/stefan/notes/app/src/main/res/anim/activity_back_out.xml -->

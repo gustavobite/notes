@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<pre-dex-items>
+<items version="2" >
 
     <item
-        dex="C:\Users\lsilva\AndroidStudioProjects\notes\app\build\intermediates\pre-dexed\debug\crouton-1.8.4-737188f71a8ddfc83f561319ce0ea0d8d80ce439.jar"
-        jar="C:\Users\lsilva\.gradle\caches\modules-2\files-2.1\de.keyboardsurfer.android.widget\crouton\1.8.4\c2544779f1579b0fd6e81590812fcdea034e6a69\crouton-1.8.4.jar"
+        jar="/Users/stefan/android/sdk/extras/android/m2repository/com/android/support/support-v4/19.0.1/support-v4-19.0.1.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="c2544779f1579b0fd6e81590812fcdea034e6a69"/>
+        sha1="587da9a481ffd341d2fa091704489b89845ddacd">
+        <dex dex="/Users/stefan/notes/app/build/intermediates/pre-dexed/debug/support-v4-19.0.1-d8b06fee534c816b789e52a2442a23ea5f5fff79.jar" />
+    </item>
     <item
-        dex="C:\Users\lsilva\AndroidStudioProjects\notes\app\build\intermediates\pre-dexed\debug\support-v4-19.0.1-04dde37e48405b4442ed2e114457f34f6f27cab4.jar"
-        jar="C:\Program Files (x86)\Android\android-studio\sdk\extras\android\m2repository\com\android\support\support-v4\19.0.1\support-v4-19.0.1.jar"
+        jar="/Users/stefan/.gradle/caches/modules-2/files-2.1/de.keyboardsurfer.android.widget/crouton/1.8.4/c2544779f1579b0fd6e81590812fcdea034e6a69/crouton-1.8.4.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="587da9a481ffd341d2fa091704489b89845ddacd"/>
+        sha1="c2544779f1579b0fd6e81590812fcdea034e6a69">
+        <dex dex="/Users/stefan/notes/app/build/intermediates/pre-dexed/debug/crouton-1.8.4-d5332cf74204b7d947606786679c2f60b0597ca8.jar" />
+    </item>
 
-</pre-dex-items>
+</items>
