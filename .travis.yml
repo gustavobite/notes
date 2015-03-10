@@ -1,5 +1,4 @@
 language: android
-
 branches:
   only:
     - feature/travis
