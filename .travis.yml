@@ -1,15 +1,24 @@
 language: android
+
+env:
+  global:
+    - ANDROID_SDK_VERSION="r24.1.2"
+
 branches:
   only:
     - feature/travis
 
-before_install:
-    - echo "y" | android update sdk --no-ui --filter platform-tools,tools
-    - echo "y" | android update sdk --no-ui --filter build-tools-20.0.0
-    - echo "y" | android update sdk --no-ui --filter android-19
-    - echo "y" | android update sdk --no-ui --filter addon-google_apis-google-18,extra-android-m2repository,extra-google-m2repository
+android:
+  components:
+    - platform-tools
+    - tools
+    - build-tools-20.0.0
+    - android-19
+    - extra
 
 install:
+  - wget http://dl.google.com/android/android-sdk_${ANDROID_SDK_VERSION}-linux.tgz
+  - tar -zxf android-sdk_${ANDROID_SDK_VERSION}-linux.tgz
   - export ANDROID_HOME=`pwd`/android-sdk-linux
   - export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
   - echo "sdk.dir=$ANDROID_HOME" > local.properties
