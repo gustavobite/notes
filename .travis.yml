@@ -6,9 +6,11 @@ branches:
 
 android:
   components:
+    - platform-tools
+    - tools
     - build-tools-20.0.0
     - android-19
     - android-18
-    - extra
-
-after_failure: "cat home/travis/build/lalbuquerque/notes/app/build/reports/tests/debug/index.html"
+    - extra-android-support
+    - extra-google-m2repository
+    - extra-android-m2repository
