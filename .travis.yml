@@ -1,6 +1,11 @@
-+language: android
-+android:
-+  components:
-+    - build-tools-20.0.0
-+    - android-19
-+    - extra
+language: android
+
+branches:
+  only:
+    - feature/travis
+
+android:
+  components:
+    - build-tools-20.0.0
+    - android-19
+    - extra
