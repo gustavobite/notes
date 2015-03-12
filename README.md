@@ -1,4 +1,4 @@
-Notes!
+Notes! [![Circle CI](https://circleci.com/gh/lalbuquerque/notes.svg?style=shield)](https://circleci.com/gh/lalbuquerque/notes)
 ======
 
 
