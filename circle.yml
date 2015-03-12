@@ -10,3 +10,8 @@ dependencies:
     - echo y | android update sdk --filter "extra-android-m2repository" --no-ui  
     - echo y | android update sdk --filter "extra-android-support" --no-ui
     - echo y | android update sdk --filter "extra-google-m2repository" --no-ui
+
+test:
+  post:
+    - mkdir -p $CIRCLE_TEST_REPORTS/junit
+    - cp notes/app/build/test-results/debug/*.xml $CIRCLE_TEST_REPORTS/junit
