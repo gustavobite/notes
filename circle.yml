@@ -14,4 +14,4 @@ dependencies:
 test:
   post:
     - mkdir -p $CIRCLE_TEST_REPORTS/junit
-    - cp notes/app/build/test-results/debug/*.xml $CIRCLE_TEST_REPORTS/junit
+    - cp /home/ubuntu/notes/app/build/test-results/debug/*.xml $CIRCLE_TEST_REPORTS/junit
