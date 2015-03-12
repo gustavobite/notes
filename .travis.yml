@@ -1,9 +1,5 @@
 language: android
 
-branches:
-  only:
-    - feature/travis
-
 android:
   components:
     - platform-tools
