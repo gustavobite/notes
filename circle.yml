@@ -10,6 +10,9 @@ dependencies:
     - echo y | android update sdk --filter "extra-android-m2repository" --no-ui  
     - echo y | android update sdk --filter "extra-android-support" --no-ui
     - echo y | android update sdk --filter "extra-google-m2repository" --no-ui
+  cache_directories:
+    - ~/.android
+    - ~/android
 
 test:
   post:
