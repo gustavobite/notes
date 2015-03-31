@@ -48,7 +48,13 @@ public class NotesAdapter extends BaseAdapter {
         View line = inflater.inflate(R.layout.note_item, parent, false);
 
         TextView title = (TextView) line.findViewById(R.id.title);
-        title.setText(note.getTitle());
+        String noteTitle = note.getTitle();
+        int endIndex = noteTitle.lastIndexOf("\n");
+        if (endIndex != -1)
+        {
+            noteTitle = noteTitle.substring(0, endIndex);
+        }
+        title.setText(noteTitle.replace("\n", ""));
 
         TextView lastModification = (TextView) line.findViewById(R.id.last_modification);
         lastModification.setText(note.getLastModification());
