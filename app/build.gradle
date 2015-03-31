@@ -1,25 +1,80 @@
 apply plugin: 'com.android.application'
+apply plugin: 'jacoco'
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion '20.0.0'
+    compileSdkVersion 21
+    buildToolsVersion '21.1.2'
     defaultConfig {
         applicationId 'br.com.lucasalbuquerque.notes'
         minSdkVersion 15
-        targetSdkVersion 19
+        targetSdkVersion 21
         versionCode 1
         versionName '1.0'
+
+        testApplicationId "br.com.lucasalbuquerque.notes.test"
+        testInstrumentationRunner "android.test.InstrumentationTestRunner"
+        testHandleProfiling true
+        testFunctionalTest true
     }
+
     buildTypes {
         debug {
             applicationIdSuffix '.debug'
+            testCoverageEnabled = true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+
         }
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            testCoverageEnabled = true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+
         }
     }
+
     productFlavors {
+    }
+
+
+    testOptions {
+        resultsDir = "$project.buildDir\\jacoco"
+    }
+}
+
+
+//Jacoco
+jacoco {
+    toolVersion = "0.7.0.201403182114"
+}
+
+task jacocoTestReport(type: JacocoReport, dependsOn: ['connectedCheck']) {
+    description = "Generates Jacoco coverage reports: XML and HTML"
+    group = "Reporting"
+//                outputs.upToDateWhen { false }
+
+    // use hidden configuration, for details look into JacocoPlugin.groovy
+    jacocoClasspath = project.configurations['androidJacocoAnt']
+
+    // exclude auto-generated classes and tests
+    def fileFilter = ['**/R.class', '**/R$*.class', '**/BuildConfig.*', '**/Manifest*.*', '**/*Test*.*',
+                      'android/**/*.*']
+    def debugTree = fileTree(dir: "${project.buildDir}/intermediates/classes/debug", excludes: fileFilter)
+    def mainSrc = "${project.projectDir}/src/main/java"
+
+    sourceDirectories = files([mainSrc])
+    classDirectories = files([debugTree])
+    executionData = fileTree(dir: project.projectDir, includes: ['**/*.exec', '**/*.ec'])
+
+    reports {
+        xml {
+            enabled = true
+            destination = "${project.buildDir}/reports/jacoco/test/jacocoTestReport.xml"
+        }
+        csv.enabled false
+        html {
+            enabled = true
+            destination = "${project.buildDir}/reports/jacoco"
+        }
     }
 }
 
