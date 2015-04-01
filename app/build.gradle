@@ -47,7 +47,7 @@ jacoco {
     toolVersion = "0.7.0.201403182114"
 }
 
-task jacocoTestReport(type: JacocoReport, dependsOn: ['connectedCheck']) {
+task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebug']) {
     description = "Generates Jacoco coverage reports: XML and HTML"
     group = "Reporting"
 //                outputs.upToDateWhen { false }
