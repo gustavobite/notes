@@ -2,6 +2,10 @@ machine:
   environment:
     ANDROID_HOME: /usr/local/android-sdk-linux
 
+general:
+  artifacts:
+    - "app/build/reports/jacoco"
+
 dependencies:
   pre:
     - echo y | android update sdk --no-ui --filter "android-18"
@@ -17,3 +21,4 @@ test:
   post:
     - mkdir -p $CIRCLE_TEST_REPORTS/junit
     - cp /home/ubuntu/notes/app/build/test-results/debug/*.xml $CIRCLE_TEST_REPORTS/junit
+    - ./gradlew jacocoTestReport
