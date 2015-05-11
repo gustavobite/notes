@@ -18,8 +18,8 @@ import br.com.lucasalbuquerque.notes.NoteActivity;
 import br.com.lucasalbuquerque.notes.R;
 import br.com.lucasalbuquerque.notes.model.Note;
 
-@RunWith(RobolectricTestRunner.class)
-@Config(emulateSdk=18, manifest="../app/src/main/AndroidManifest.xml")
+@RunWith(RobolectricGradleTestRunner.class)
+@Config(emulateSdk=18, manifest="src/main/AndroidManifest.xml")
 public class HomeActivityTest
 {
     HomeActivity homeActivity;
